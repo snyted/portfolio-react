@@ -6,7 +6,7 @@ const HamburguerMenu = () => {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="top-4 right-4 z-50 flex flex-col justify-around h-6 w-6 relative bg-transparent border-none cursor-pointer focus:outline-none"
+        className="top-9 right-4 z-50 flex flex-col justify-around h-6 w-6 mr-3 fixed bg-transparent border-none cursor-pointer focus:outline-none"
       >
         <div
           className={`
