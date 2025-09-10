@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "tailwind-init": "tailwindcss init -p",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
