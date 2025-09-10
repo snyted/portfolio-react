@@ -2,7 +2,7 @@ import Eu from "../../../../public/src/img/eu.png";
 
 const HeroMobile = () => {
   return (
-    <div className="md:hidden flex items-center directi flex-col rounded-2xl w-full h-[500px] hero-gradient">
+    <div className="md:hidden flex items-center directi flex-col rounded-b-2xl w-full h-[500px] hero-gradient">
       <img
         src={Eu}
         alt="Fotografia de João Vitor Farias"

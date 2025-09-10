@@ -1,15 +1,50 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  user-select: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;   
+}
 
 .font-inter-custom {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .font-roboto-custom {
-    font-family: 'Roboto', sans-serif;
-  }
+  font-family: "Roboto", sans-serif;
+}
 
-  .hero-gradient {
-    background: linear-gradient(150.0deg, #3D3D3D80 10%, #3D3D3D00 70%, #00000080 100%);
+.hero-gradient {
+  background-color: black;
+  background: linear-gradient(#45454500 0%, #000000dc 0%);
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.blob-animation {
+  animation: blob 7s infinite;
+}
+
+.blob-animation-2 {
+  animation: blob 7s infinite 2s; /* Adiciona o atraso de 2s */
+}
