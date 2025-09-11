@@ -19,6 +19,7 @@ export default function Projects() {
           text="Um gerenciador de tarefas para usar no seu dia-dia e se organizar melhor."
           toolsUsed={[FaHtml5, FaCss3, FaJs, FaFigma]}
           projectImg={TodoList}
+          urlDoProjeto="https://snyted.github.io/todo-list/"
         />
         <ProjectCard
           title="Portfolio"

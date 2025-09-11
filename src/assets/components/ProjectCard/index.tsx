@@ -6,6 +6,7 @@ interface ProjectCardProps {
   title: string;
   text: string;
   projectImg: string;
+  urlDoProjeto?: string;
   toolsUsed: React.ElementType[];
 }
 
@@ -14,6 +15,7 @@ export default function ProjectCard({
   text,
   toolsUsed,
   projectImg,
+  urlDoProjeto
 }: ProjectCardProps) {
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
@@ -67,7 +69,7 @@ export default function ProjectCard({
           ))}
           <a
             className="ml-auto"
-            href="https://github.com/snyted/portfolio-react"
+            href={urlDoProjeto}
             target="_blank"
             rel="noopener noreferrer"
           >
