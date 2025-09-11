@@ -1,28 +1,55 @@
+import { useEffect, useRef } from "react";
+import TagCloud from "TagCloud";
+import ReactDOMServer from "react-dom/server";
+import H2Component from "../../components/H2Component";
+
 import { FaReact, FaHtml5, FaCss3, FaJs, FaGitAlt, FaGithub } from "react-icons/fa";
-import { GiGears } from "react-icons/gi";
-import { VscVscode } from "react-icons/vsc";
 import { SiTypescript } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
-import HabilitieCard from "../../components/HabilitiesCards"; 
+export default function Habilities() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-const Habilities = () => {
-    return (
-      <section className="container mx-auto p-8">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white">Habilidades</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
-          {/* Passamos a cor de preenchimento (background) */}
-          <HabilitieCard icon={FaHtml5} text="HTML5" fillColor="bg-orange-600" />
-          <HabilitieCard icon={FaCss3} text="CSS3" fillColor="bg-blue-600" />
-          <HabilitieCard icon={FaReact} text="React" fillColor="bg-blue-400" />
-          <HabilitieCard icon={FaJs} text="JavaScript" fillColor="bg-amber-400" />
-          <HabilitieCard icon={SiTypescript} text="TypeScript" fillColor="bg-sky-600" />
-          <HabilitieCard icon={FaGitAlt} text="Git" fillColor="bg-orange-600" />
-          <HabilitieCard icon={FaGithub} text="GitHub" fillColor="bg-neutral-900" />
-          <HabilitieCard icon={GiGears} text="API Integration" fillColor="bg-neutral-900" />
-          <HabilitieCard icon={VscVscode} text="VSCODE" fillColor="bg-sky-700" />
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const icons = [
+      { icon: <FaReact size={40} />, hover: "hover:text-cyan-400" },
+      { icon: <FaHtml5 size={40} />, hover: "hover:text-orange-500" },
+      { icon: <FaCss3 size={40} />, hover: "hover:text-blue-500" },
+      { icon: <FaJs size={40} />, hover: "hover:text-yellow-400" },
+      { icon: <FaGitAlt size={40} />, hover: "hover:text-red-500" },
+      { icon: <FaGithub size={40} />, hover: "hover:text-black" },
+      { icon: <VscVscode size={40} />, hover: "hover:text-blue-400" },
+      { icon: <SiTypescript size={40} />, hover: "hover:text-blue-600" },
+    ];
+
+    const texts = icons.map(({ icon, hover }) =>
+      ReactDOMServer.renderToString(
+        <div className={`icon-cloud text-white transition-colors duration-300 ${hover}`}>
+          {icon}
         </div>
-      </section>
+      )
     );
-  };
-  
-  export default Habilities;
+
+    const instance = TagCloud(containerRef.current, texts, {
+      radius: 180,
+      maxSpeed: "normal",
+      initSpeed: "normal",
+      keep: true,
+      useHTML: true,
+    });
+
+    return () => instance.destroy();
+  }, []);
+
+  return (
+    <section className="flex justify-center flex-col items-center h-screen">
+      <H2Component title="Minhas " titleEffect="Habilidades"/>
+      <div
+        ref={containerRef}
+        className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] mt-10 flex justify-center items-center"
+      />
+    </section>
+  );
+}
