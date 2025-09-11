@@ -12,7 +12,7 @@ export default function H2Component({
   text,
 }: H2ComponentProps) {
   return (
-    <>
+    <div className="mb">
       <h2 className="text-2xl font-inter-custom">
         {title}
         <motion.div
@@ -31,6 +31,6 @@ export default function H2Component({
         </motion.div>
       </h2>
       <p>{text}</p>
-    </>
+    </div>
   );
 }

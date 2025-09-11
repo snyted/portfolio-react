@@ -48,7 +48,7 @@ export default function Habilities() {
       <H2Component title="Minhas " titleEffect="Habilidades"/>
       <div
         ref={containerRef}
-        className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] mt-10 flex justify-center items-center"
+        className="w-[80vw] h-[80vw] max-w-[500px] max-h-[500px] flex justify-center items-center mt-10 md:mt-0"
       />
     </section>
   );
