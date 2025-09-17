@@ -1,4 +1,4 @@
-import Eu from "../../../../public/src/img/eu.png";
+import Eu from "../../../img/eu.png";
 
 const HeroMobile = () => {
   return (
