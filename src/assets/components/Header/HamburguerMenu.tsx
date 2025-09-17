@@ -38,10 +38,7 @@ const HamburguerMenu = () => {
           <a href="#" onClick={() => setIsOpen(false)} className="text-gray-800 hover:text-gray-600 my-4">
             Início
           </a>
-          <a href="#" onClick={() => setIsOpen(false)} className="text-gray-800 hover:text-gray-600 my-4">
-            Tecnologias
-          </a>
-          <a href="#" onClick={() => setIsOpen(false)} className="text-gray-800 hover:text-gray-600 my-4">
+          <a href="#projects" onClick={() => setIsOpen(false)} className="text-gray-800 hover:text-gray-600 my-4">
             Projetos
           </a>
           <a href="#" onClick={() => setIsOpen(false)} className="text-gray-800 hover:text-gray-600 my-4">
