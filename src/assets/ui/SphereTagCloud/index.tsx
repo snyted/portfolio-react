@@ -39,14 +39,12 @@ export default function SphereTagCloud() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // breakpoints simples
     const width = window.innerWidth;
     let radius = 180;
-    let iconSize = 50;
+    let iconSize = 40;
 
     if (width >= 768) {
-      // desktop grande
-      radius = 320;
+      radius = 330;
       iconSize = 60;
     }
     const icons = [
@@ -65,7 +63,9 @@ export default function SphereTagCloud() {
 
     const texts = icons.map(({ Icon, color }) =>
       ReactDOMServer.renderToString(
-        <div className={`icon-cloud text-white transition-colors duration-300 ${color}`}>
+        <div
+          className={`icon-cloud text-white transition-colors duration-300 ${color}`}
+        >
           <Icon size={iconSize} />
         </div>
       )
