@@ -9,8 +9,9 @@ import {
   FaGitAlt,
   FaGithub,
   FaFigma,
+  FaNode,
 } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import { SiAxios, SiTypescript } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbApi } from "react-icons/tb";
 import { IoLogoFirebase } from "react-icons/io5";
@@ -59,6 +60,8 @@ export default function SphereTagCloud() {
       { Icon: SiTypescript, color: "hover:text-blue-600" },
       { Icon: TbApi, color: "hover:text-sky-400" },
       { Icon: IoLogoFirebase, color: "hover:text-orange-600" },
+      { Icon: SiAxios, color: "hover:text-black" },
+      { Icon: FaNode, color: "hover:text-green-600" },
     ];
 
     const texts = icons.map(({ Icon, color }) =>

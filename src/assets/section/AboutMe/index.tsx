@@ -3,12 +3,24 @@ import Programming from "../../../img/Programming.json";
 import Lottie from "lottie-react";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
-import { BsSearchHeart, BsTelephone } from "react-icons/bs";
 import { GrGroup } from "react-icons/gr";
 import { BiBookReader } from "react-icons/bi";
 import { SiDialogflow } from "react-icons/si";
+import { useState } from "react";
+import { FaEnvelope } from "react-icons/fa";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import { BsSearchHeart, BsTelephone } from "react-icons/bs";
 
 export default function AboutMe() {
+  const [copied, setCopied] = useState(false);
+  const email = "seuemail@exemplo.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // volta pro estado normal após 2s
+  };
+
   return (
     <section id="aboutme" className="flex flex-col items-center mt-30 m-5">
       <div className="flex flex-col items-center gap-5">
@@ -17,10 +29,13 @@ export default function AboutMe() {
           Olá novamente! Me chamo{" "}
           <span className="font-bold">João Vitor Farias</span>, tenho 24 anos e
           sou graduando em Análise e Desenvolvimento de Sistemas e também sou
-          técnico em Desenvolvimento de Sistemas. Atualmente estudo React e
-          NodeJS, e faço projetos pessoais para aprimorar minhas habilidades,
-          tem sido uma experiência incrível, e com tudo que venho aprendendo
-          tenho certeza que posso contribuir muito para sua equipe.
+          técnico em Desenvolvimento de Sistemas. Atualmente estudo diversas
+          ferramentas do mercado, e faço projetos pessoais para aprimorar minhas
+          habilidades e aprender novas tecnologias. Estou em busca da minha
+          primeira oportunidade como desenvolvedor, e estou muito animado para
+          começar essa nova jornada. O processo de aprendizado tem sido uma
+          experiência incrível, e com tudo que venho aprendendo tenho certeza
+          que posso contribuir muito para sua equipe.
         </p>
         <div className="flex gap-3 items-center ">
           <ul className="flex gap-2 flex-wrap"></ul>
@@ -61,8 +76,46 @@ export default function AboutMe() {
                 </a>
               </p>
             </div>
+            <button
+              onClick={handleCopy}
+              className="relative flex items-center gap-3 px-6 py-3 rounded-xl
+                 bg-indigo-600 text-white font-semibold
+                 shadow-[0_0_15px_rgba(99,102,241,0.5)]
+                 hover:shadow-[0_0_25px_rgba(99,102,241,0.7)]
+                 hover:scale-105 transition-all duration-300 ease-in-out overflow-hidden"
+            >
+              <FaEnvelope
+                className={`${
+                  copied ? "opacity-0" : "opacity-100"
+                } transition-opacity duration-300`}
+              />
+              <span
+                className={`${
+                  copied ? "opacity-0" : "opacity-100"
+                } transition-opacity duration-300`}
+              >
+                Copiar email
+              </span>
+              <span
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                    text-white font-semibold bg-indigo-600/80 px-4 py-1 rounded-lg
+                    transition-all duration-300 w-full flex items-center justify-center gap-1
+                    ${
+                      copied
+                        ? "opacity-100 -translate-y-4 bg-transparent"
+                        : "opacity-0 translate-y-4"
+                    }`}
+              >
+                Feito! <IoCheckmarkCircle size={18} />
+              </span>
+            </button>
           </div>
         </div>
+        {copied ? (
+          <p className="fixed bottom-10  bg-black/40 p-2 text-green-400 mt-2 z-999">
+            Email copiado para sua área de transferencia.
+          </p>
+        ) : null}
       </div>
 
       <Lottie animationData={Programming} />

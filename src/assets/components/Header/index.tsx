@@ -9,8 +9,7 @@ export default function Header() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaGithub size={30} className="text-purple-700 inline-block ml-1" />
-        <span>/snyted</span>
+        <FaGithub size={30} className="text-white hover:text-indigo-600 transition-all duration-500 ml-10" />
       </a>
       <HamburguerMenu />
     </header>
