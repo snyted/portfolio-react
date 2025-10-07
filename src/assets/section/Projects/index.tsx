@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/ProjectCard";
-import H2Component from "../../components/Titles";
+import Title from "../../components/Title";
 import { projectsData } from "../../data/projects-data";
 
 export default function Projects() {
@@ -8,7 +8,7 @@ export default function Projects() {
       id="projects"
       className="text-center flex flex-col items-center gap-8"
     >
-      <H2Component
+      <Title
         title="Projetos"
         text="Um pouco do que eu venho aprendendo."
       />

@@ -1,9 +1,9 @@
-interface TitlesProps {
-  title?: string;
+interface TitleProps {
+  title: string;
   text?: string;
 }
 
-export default function Titles({ title, text }: TitlesProps) {
+export default function Title({ title, text }: TitleProps) {
   return (
     <div className="flex flex-col gap-1">
       <h1

@@ -1,5 +1,5 @@
 import SkillsAndTools from "../../ui/SphereTagCloud";
-import Titles from "../../components/Titles";
+import Title from "../../components/Title";
 
 export default function Habilities() {
   return (
@@ -7,7 +7,7 @@ export default function Habilities() {
       id="habilities"
       className="flex justify-center flex-col items-center h-screen mt-10 mb-10"
     >
-      <Titles title="Habilidades" text="As ferramentas e tecnologias que uso."/>
+      <Title title="Habilidades" text="As ferramentas e tecnologias que uso."/>
       <SkillsAndTools />
     </section>
   );
