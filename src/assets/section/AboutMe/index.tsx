@@ -13,12 +13,12 @@ import { BsSearchHeart, BsTelephone } from "react-icons/bs";
 
 export default function AboutMe() {
   const [copied, setCopied] = useState(false);
-  const email = "seuemail@exemplo.com";
+  const email = "joaofarias_16@hotmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // volta pro estado normal após 2s
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -26,8 +26,7 @@ export default function AboutMe() {
       <div className="flex flex-col items-center gap-5">
         <Title title="Sobre mim" />
         <p className="w-[70%] text-lg text-neutral-400 text-center">
-          Olá novamente! Me chamo{" "}
-          <span className="font-bold">João Vitor Farias</span>, tenho 24 anos e
+          Olá novamente! Me chamo <span className="font-bold">João Vitor Farias</span>, tenho 24 anos e
           sou graduando em Análise e Desenvolvimento de Sistemas e também sou
           técnico em Desenvolvimento de Sistemas. Atualmente estudo diversas
           ferramentas do mercado, e faço projetos pessoais para aprimorar minhas
